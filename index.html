@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciayie Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Responsive & Layout Styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #000000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #f06292;
+    }
+
+    .nav-container .links a {
+      margin: 0 0.75rem;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .hamburg {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      background: #ffffff;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown .links {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .dropdown .links a {
+      padding: 0.5rem 0;
+    }
+
+    .cancel {
+      align-self: flex-end;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .social-links i {
+      margin: 0.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      background-color: #f06292;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    /* Music control button */
+    #music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f06292;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    @media (max-width: 768px) {
+      nav .links {
+        display: none;
+      }
+
+      .hamburg {
+        display: block;
+      }
+
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .image {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">CIAYIE<span> STORE</span></div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Product</a>
+      <a href="skills.html">Skills</a>
+      <a href="introduction.html">Introduction</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="hamburg">&#9776;</div>
+  </div>
+</nav>
+
+<div class="dropdown">
+  <div class="cancel">&times;</div>
+  <div class="links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Product</a>
+      <a href="skills.html">Skills</a>
+      <a href="introduction.html">Introduction</a>
+      <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+
+
+  <!-- Main Section -->
+  <section>
+    <div class="main-container">
+      <div class="content">
+        <h1 data-aos="fade-right" data-aos-duration="1500" data-aos-delay="600">
+          CIAYIE <span>STORE</span>
+        </h1>
+        <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="800" class="typewriter">
+          I'm a <span class="typewriter-text"></span><label for="">|</label>
+        </div>
+        <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1000">
+          CIAYIE STORE adalah toko digital terpercaya yang menyediakan berbagai kebutuhan top-up game dan produk digital lainnya dengan harga terjangkau dan proses cepat. Kami hadir untuk memenuhi kebutuhan gamers Indonesia dengan layanan yang responsif, aman, dan efisien.
+        </p>
+        <div class="social-links">
+          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <button onclick="window.open('https://wa.me//6285715129501', '_blank')">
+          TopUp Sekarang
+        </button>
+      </div>
+      <div class="image" data-aos="zoom-in" data-aos-duration="2000">
+  <video 
+    class="responsive-video"
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    poster="thumbnail.jpg" <!-- opsional, bisa dihapus -->
+  >
+    <source src="main1.mp4" type="video/mp4" />
+    Browser kamu tidak mendukung video ini.
+  </video>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio -->
+  <audio id="bg-music" src="music.mp3" autoplay loop></audio>
+  <button id="music-control" onclick="toggleMusic()"><i class="fa-solid fa-pause"></i></button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+
+    // Navbar toggle
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdownMenu');
+      dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Music control
+    const music = document.getElementById('bg-music');
+    const controlBtn = document.getElementById('music-control');
+    let isPlaying = true;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        controlBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+      } else {
+        music.play();
+        controlBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+  
+</body>
+</html>
